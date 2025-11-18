@@ -9,9 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _isRigidbody = false;
     [SerializeField]
     private Camera _camera;
-
     [SerializeField]
-    private float _force = 5;
+    PlayerStat _playerStat;
 
     private Rigidbody _rb;
     private Transform _tr;
@@ -43,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (_isTranslate)
         {
-            _tr.Translate(dir2 * _force * Time.deltaTime);
+            _tr.Translate(dir2 * _playerStat.MoveSpeed * Time.deltaTime);
         }
 
         if (_isRigidbody)
         {
-            _rb.AddForce(dir2 * _force);
+            _rb.AddForce(dir2 * _playerStat.MoveSpeed);
         }
 
 

@@ -4,6 +4,7 @@ public class TrapObj : MonoBehaviour
 {
     [SerializeField]
     private float _trapDamage = 5;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -694,7 +694,6 @@ GameObject:
   - component: {fileID: 733130898}
   - component: {fileID: 733130897}
   - component: {fileID: 733130896}
-  - component: {fileID: 733130900}
   - component: {fileID: 733130901}
   - component: {fileID: 733130902}
   m_Layer: 0
@@ -796,22 +795,6 @@ Transform:
   - {fileID: 418860282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &733130900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733130895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27fd3879aac8b344b9691b5108e43d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isTranslate: 1
-  _isRigidbody: 0
-  _camera: {fileID: 330585545}
-  _force: 5
 --- !u!54 &733130901
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -848,11 +831,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 733130895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74edd59b7cdadd54f84a58287e995a2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d456365eb4f4404cbb480f93bd9b63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurHP: 20
-  MaxHP: 30
+  _camera: {fileID: 330585545}
+  Stat: {fileID: 11400000, guid: d09d80836b70bcb4ba018f4d62013b01, type: 2}
+  _changeType: 0
+  InputReader: {fileID: 11400000, guid: 6c5ceb880f5d9a64a983495ad5a06f29, type: 2}
+  Player: {fileID: 733130895}
+  Speed: 5
 --- !u!1 &809923225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 821890156}
   _text: {fileID: 1308038957}
-  _stat: {fileID: 733130902}
+  _playerController: {fileID: 733130902}
 --- !u!1 &1150688631
 GameObject:
   m_ObjectHideFlags: 0

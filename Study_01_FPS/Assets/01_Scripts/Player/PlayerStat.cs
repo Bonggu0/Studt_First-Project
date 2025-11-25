@@ -1,21 +1,10 @@
 using Unity.Hierarchy;
 using UnityEngine;
 
-public class PlayerStat : MonoBehaviour
+[CreateAssetMenu(fileName = "Player", menuName = "Scriptable Objects/Stat")]
+public class PlayerStat : ScriptableObject
 {
     public float CurHP = 20;
     public float MaxHP = 20;
     public float MoveSpeed = 5;
-    
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
 }

@@ -15,7 +15,7 @@ public class PlayerUI : MonoBehaviour
 
     private void Start()
     {
-        _stat = _playerController.Stat;
+        _stat = _playerController.GetStat();
     }
     private void OnEnable()
     {
@@ -26,9 +26,9 @@ public class PlayerUI : MonoBehaviour
         TrapObj.OnHPUpdate -= UpdateHP;
     }
 
-    private void UpdateHP(int hp)
+    private void UpdateHP(int damge)
     {
-        _stat.CurHP = -hp;
+        _stat.CurHP -= damge;
         UpdateUI();
     }
 

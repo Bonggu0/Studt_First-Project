@@ -9,8 +9,12 @@ public class InputReader : ScriptableObject, IPlayerActions
     private InputSystem_Actions _actions;
 
     private Vector2 _dir;
+    private bool _locked = false;
 
-    public Vector2 Dir() { return _dir; }
+
+    public Vector2 GetDir() { return _dir; }
+    public bool GetLocked() { return _locked; }
+
 
     public void Initialize()
     {
@@ -24,7 +28,22 @@ public class InputReader : ScriptableObject, IPlayerActions
     {
         _dir = context.ReadValue<Vector2>();
     }
-    
+    public void OnFocusing(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _locked = true;
+        }
+        else
+        {
+            _locked = false;
+        }
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+    }
+
     public void OnAttack(InputAction.CallbackContext context)
     {
     }
@@ -41,10 +60,6 @@ public class InputReader : ScriptableObject, IPlayerActions
     {
     }
 
-    public void OnLook(InputAction.CallbackContext context)
-    {
-    }
-
     public void OnNext(InputAction.CallbackContext context)
     {
     }
@@ -56,4 +71,5 @@ public class InputReader : ScriptableObject, IPlayerActions
     public void OnSprint(InputAction.CallbackContext context)
     {
     }
+
 }

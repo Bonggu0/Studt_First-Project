@@ -12,7 +12,9 @@ public class TrapObj : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerStat playerStat = other.GetComponent<PlayerStat>();
+            PlayerController con = other.gameObject.GetComponent<PlayerController>();
+            PlayerStat playerStat = con.GetStat();
+
             if (playerStat == null || playerStat.CurHP < 1) { return; }
             OnHPUpdate?.Invoke(_trapDamage);
         }

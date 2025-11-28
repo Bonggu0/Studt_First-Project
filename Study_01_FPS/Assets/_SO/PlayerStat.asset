@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74edd59b7cdadd54f84a58287e995a2e, type: 3}
   m_Name: PlayerStat
   m_EditorClassIdentifier: 
-  CurHP: 20
+  CurHP: 0
   MaxHP: 20
   MoveSpeed: 5
